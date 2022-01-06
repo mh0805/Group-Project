@@ -1,10 +1,21 @@
 # Group-Project, Data Science Immersive at General Assembly
-
-Authors: Mason Lee, Hans Baumberger, Annie Wang, and Sileshi Hirpa
-
 ## Project 5: Predicting employee total compensation
 
-**Problem statement:** Predict employee total compensation based on their professional features (job role, years of experience, etc.), their company and office features (company, office location) and macro-economy features (inflation rate, employment rate)
+**Authors:**
+* Annie Wang
+* Hans Baumberger
+* Mason Lee and
+* Sileshi Hirpa
+
+## Content of the Project:
+  * ### Problem statement
+  * ### Data wrangling and EDA
+  * ### Modeling
+  * ### Model Selection
+  * ### Conclusions and Recommendation
+
+### **Problem statement:**
+Predict employee total compensation based on their professional features (job role, years of experience, etc.), their company and office features (company, office location) and macro-economy features (inflation rate, employment rate)
 * Goals:
     1. Provide employees with a reasonable expectation for compensation negotiation
     2. Provide companies an important benchmark for the talent competition, i.e., how much to offer to stay competitive in recruiting
@@ -44,16 +55,17 @@ The three datasets were merged after making necessary data cleanings and EDA and
 
 ### Final Score
 
-Almost all the models we run took longer time than we expected and hence we run one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be ____.
+Almost all the models we run took longer time than we expected and hence we have to try one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be ____.
 
-|**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**RMSE(Train/Test)**|*Comment*|
-|--|--|--|--|--|
-|**Linear Regression(with no penality)**|0.5193|-7.2931Xe^28|8286.35/1.22Xe^27||
-|**Lasso Regularization**|0.5182|0.5143|8305.30/8157.45||
-|**Ridge Regularization**|0.52|0.5097|8274.20/8234.28||
-|**Elastic Net Regularization**|0.4483|0.4499|9511.19/9238.88||
-|**Random Forest**|||||
-|**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12/8198.40||
-|**Gradient Boosting Regressor (with gridsearch)**|0.7184|0.5512|4778.35/7859.73||
+|**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
+|--|--|--|--|--|--|
+|**Linear Regression(with no penality)**|0.5193|-7.2931Xe^28|8286.35|1.22Xe^27||
+|**Lasso Regularization**|0.5182|0.5143|8305.30|8157.45||
+|**Ridge Regularization**|0.52|0.5097|8274.20|8234.28||
+|**Elastic Net Regularization**|0.4483|0.4499|9511.19|9238.88||
+|**Random Forest**|0.466|0.410|9060|10319||
+|**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12|8198.40||
+|**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
 |**SVR**|0.1368|-0.1287|||
-|**AdaBoost**|0.1930|0.1276|13693/15276||
+|**AdaBoost**|0.1930|0.1276|13693|15276||
+
