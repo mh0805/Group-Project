@@ -9,8 +9,8 @@
 
 ## Content of the Project:
   * ### Problem statement
-  * ### Data wrangling and EDA
-  * ### Modeling
+  * ### Data cleanings and EDA
+  * ### Data Preprocessing and Modeling
   * ### Model Selection
   * ### Conclusions and Recommendation
 
@@ -22,6 +22,8 @@ Predict employee total compensation based on their professional features (job ro
     3. Identify the important features that determine the total compensation, including the company, job role, office location, employees’ experience, and macro-factors such as employment rate and inflation rate.  
 
 The success of the project is measured by the accuracy of the total compensation prediction, i.e., the difference between the actual and the predicted compensation.
+
+* ### Data cleanings and EDA
 
 Our project is based on the datasets obtained from:
 1. web scrapping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with a  permission from the owners.
@@ -51,11 +53,21 @@ The three datasets were merged after making necessary data cleanings and EDA and
 
 ![Total copensation](Images/us_unemployment_rate.png)
 
+* ### Data Preprocessing and Modeling
+We tried the models:
+> **Linear regression with (and without penalties)**
+  >
+  > **Random Forest**
+  >
+  > **Gradient Boosting (with/without gridsearch)**
+  >
+  > **Support Vector Regression(SVR)**, and
+  >
+  > **AdaBoost**
 
+* ### Model Selection
 
-### Final Score
-
-Almost all the models we run took longer time than we expected and hence we have to try one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be Gradient Boosting Regressor (with gridsearch).
+Almost all the models we tried took longer time than we expected and so we had to decide trying out one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be Gradient Boosting Regressor (with gridsearch).
 
 |**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
 |--|--|--|--|--|--|
@@ -68,4 +80,3 @@ Almost all the models we run took longer time than we expected and hence we have
 |**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
 |**SVR**|0.1368|-0.1287|||
 |**AdaBoost**|0.1930|0.1276|13693|15276||
-
