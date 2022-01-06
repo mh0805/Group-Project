@@ -23,5 +23,5 @@ if submit:
         .predict([[company_name, title, years_of_experience, years_at_company, state]])
         st.write('You can expect a total compensation of' prediction '$.')
 
-        
+df['inflation_rate'].iloc[-1] #Code for hardcore input data for modeling prediction        
 #https://towardsdatascience.com/diabetes-prediction-application-using-streamlit-fed6120124a5
