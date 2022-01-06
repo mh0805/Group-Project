@@ -1,6 +1,10 @@
 # Group-Project, Data Science Immersive at General Assembly
 
-Authors: Mason Lee, Hans Baumberger, Annie Wang, and Sileshi Hirpa
+**Authors:**
+* Annie Wang
+* Hans Baumberger
+* Mason Lee and
+* Sileshi Hirpa
 
 ## Project 5: Predicting employee total compensation
 
@@ -55,9 +59,6 @@ Almost all the models we run took longer time than we expected and hence we run 
 |**Random Forest**|||||
 |**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12/8198.40||
 |**Gradient Boosting Regressor (with gridsearch)**|0.7184|0.5512|4778.35/7859.73||
-<<<<<<< HEAD
 |**SVR**|0.1368|-0.1287|||
-=======
 |**SVM**|||||
->>>>>>> a027740 (README updated)
 |**AdaBoost**|0.1930|0.1276|13693/15276||
