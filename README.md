@@ -55,7 +55,7 @@ The three datasets were merged after making necessary data cleanings and EDA and
 
 ### Final Score
 
-Almost all the models we run took longer time than we expected and hence we have to try one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be ____.
+Almost all the models we run took longer time than we expected and hence we have to try one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be Gradient Boosting Regressor (with gridsearch).
 
 |**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
 |--|--|--|--|--|--|
