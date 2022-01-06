@@ -6,7 +6,7 @@
 * Hans Baumberger
 * Mason Lee and
 * Sileshi Hirpa
-Making changes...
+
 ## Content of the Project:
   * ### Problem statement
   * ### Data wrangling and EDA
@@ -68,3 +68,4 @@ Almost all the models we run took longer time than we expected and hence we have
 |**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
 |**SVR**|0.1368|-0.1287|||
 |**AdaBoost**|0.1930|0.1276|13693|15276||
+
