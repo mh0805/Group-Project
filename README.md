@@ -25,11 +25,11 @@ The technical goal for our project is to maximize **R^2** and minimize **MSE**.
 * ### Data cleaning and EDA
 
 Our project is based on the datasets obtained from:
-1. web scraping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with a  permission from the owners.
+1. Web scraping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with permission from the administration.
 2. Inflation rate from [rateinflation.com](https://www.rateinflation.com/inflation-rate/usa-inflation-rate/)
-3. unemployment data from [Data World](https://data.world/vizwiz/employment-unemployment-by-state-and-month/workspace/file?filename=BLS+Monthly+Unemployment+Rate.xlsx).
+3. Unemployment data from [Data World](https://data.world/vizwiz/employment-unemployment-by-state-and-month/workspace/file?filename=BLS+Monthly+Unemployment+Rate.xlsx).
 
-The three datasets were merged after making necessary data cleaning and EDA.
+The three datasets were merged after data cleaning and EDA.
 
 ## Data Dictionary
 
@@ -51,7 +51,7 @@ The three datasets were merged after making necessary data cleaning and EDA.
 |employment_rate|The percentage of the labor force that is employed|
 |employment_rate_3mos|employment rate of 3 months prior to record timestamp|
 
-* Some of the EDAs we used include:
+* Some of the EDA we used include:
   1. Features' correlation  
 
         ![Correlation of features](Images/features_vs_compensation.png)
@@ -63,18 +63,19 @@ The three datasets were merged after making necessary data cleaning and EDA.
 
       ![Total copensation](Images/worker_locations.png)
 
-4. Inflation rates
+4. Nationwide Inflation Rate
 
     ![Total copensation](Images/inflation_rate.png)
 
 
-5. Unemployment rate in the US
+5. Nationwide Unemployment Rate
 
 ![Total copensation](Images/us_unemployment_rate.png)
 
 * ### Model Performance
 
-Almost all the models we tried took longer time than we expected and so we had to decide trying out one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be Gradient Boosting Regressor (with gridsearch).
+Most of our models took longer than anticipated amount of time during the hyperparameter tuning process and we decided to run a model (RandomForestRegression) on the AWS platform. 
+The following table summarizes the models we evaluated and the best model the team agreed upon for the compensation preidction: Gradient Boosting Regressor (with GridSearch).
 
 |**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
 |--|--|--|--|--|--|
@@ -86,11 +87,12 @@ Almost all the models we tried took longer time than we expected and so we had t
 |**KNN Regressor (with Gridsearch)**|0.9907|0.4762|158.35|9172.55||
 |**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12|8198.40||
 |**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
-|**Support Vector Regression (SVR)(without gridsearch)**|0.1368|-0.1287|||
-|**Support Vector Regression (SVR)(with Gridsearch)**|0.5029|0.4745|||
+|**Support Vector Regression (SVR) (without gridsearch)**|0.1368|-0.1287|||
+|**Support Vector Regression (SVR) (with Gridsearch)**|0.5029|0.4745|||
 |**AdaBoost (with Gridsearch)**|0.1930|0.1276|13693|15276||
 
 ### Next Steps
-* More features about the employee, the company and industry, and macro-economy
+* Incorporate more personal background features of the employee into analysis (i.e. Education)
+* Incorporate more company and industry background information (i.e. Stock price, Company size, Industry sector)
 * Include current data (after Sep. 2020)
-* More hyperparameter search (grid search, randomized search, bayes search)
+* More hyperparameter tuning (GridSearch, RandomizedSearch, BayesSearch)
