@@ -76,6 +76,7 @@ Almost all the models we tried took longer time than we expected and so we had t
 |**Ridge Regularization**|0.52|0.5097|8274.20|8234.28||
 |**Elastic Net Regularization**|0.4483|0.4499|9511.19|9238.88||
 |**Random Forest**|0.466|0.410|9060|10319||
+|**KNN Regressor**|0.9907|0.4762|158.3478|9172.5505||
 |**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12|8198.40||
 |**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
 |**SVR**|0.1368|-0.1287|||
