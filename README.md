@@ -54,8 +54,8 @@ The three datasets were merged after data cleaning and EDA.
 * Some of the EDA we used include:
 
 1. Features' correlation  
+      ![Correlation of features](Images/features_vs_compensation.png)
 
-        ![Correlation of features](Images/features_vs_compensation.png)
 2. Top 10 total compensations by title
 
       ![Total copensation](Images/total_compensation_by_title.png)
