@@ -26,7 +26,7 @@ The technical goal for our project is to maximize **R^2** and minimize **MSE**.
 
 Our project is based on the datasets obtained from:
 1. web scraping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with a  permission from the owners.
-2. Inflation rate from [rateinflation.com](https://www.rateinflation.com/inflation-rate/usa-inflation-rate/), and
+2. Inflation rate from [rateinflation.com](https://www.rateinflation.com/inflation-rate/usa-inflation-rate/)
 3. unemployment data from [Data World](https://data.world/vizwiz/employment-unemployment-by-state-and-month/workspace/file?filename=BLS+Monthly+Unemployment+Rate.xlsx).
 
 The three datasets were merged after making necessary data cleaning and EDA.
@@ -79,7 +79,6 @@ Almost all the models we tried took longer time than we expected and so we had t
 |**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
 |--|--|--|--|--|--|
 |**Linear Regression(with no penality)**|0.5193|-7.2931Xe^28|8286.35|1.22Xe^27||
-
 |**Lasso Regularization (CV)**|0.5182|0.5143|8305.30|8157.45||
 |**Ridge Regularization (CV)**|0.52|0.5097|8274.20|8234.28||
 |**Elastic Net  Regularization (CV)**|0.4483|0.4499|9511.19|9238.88||
@@ -90,7 +89,8 @@ Almost all the models we tried took longer time than we expected and so we had t
 |**Support Vector Regression (SVR)(without gridsearch)**|0.1368|-0.1287|||
 |**Support Vector Regression (SVR)(with Gridsearch)**|0.5029|0.4745|||
 |**AdaBoost (with Gridsearch)**|0.1930|0.1276|13693|15276||
+
 ### Next Steps
 * More features about the employee, the company and industry, and macro-economy
-* Include more current data
+* Include current data (after Sep. 2020)
 * More hyperparameter search (grid search, randomized search, bayes search)
