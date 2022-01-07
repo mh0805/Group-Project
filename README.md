@@ -52,7 +52,8 @@ The three datasets were merged after data cleaning and EDA.
 |employment_rate_3mos|employment rate of 3 months prior to record timestamp|
 
 * Some of the EDA we used include:
-  1. Features' correlation  
+
+1. Features' correlation  
 
         ![Correlation of features](Images/features_vs_compensation.png)
 2. Top 10 total compensations by title
