@@ -4,33 +4,52 @@
 **Authors:**
 * Annie Wang
 * Hans Baumberger
-* Mason Lee and
+* Mason Lee
 * Sileshi Hirpa
 
 ## Content of the Project:
   * ### Problem statement
-  * ### Data cleanings and EDA
+  * ### Data cleaning and EDA
   * ### Data Preprocessing and Modeling
   * ### Model Selection
-  * ### Conclusions and Recommendation
+  * ### Next Steps
 
 ### **Problem statement:**
-Predict employee total compensation based on their professional features (job role, years of experience, etc.), their company and office features (company, office location) and macro-economy features (inflation rate, employment rate)
-* Goals:
-    1. Provide employees with a reasonable expectation for compensation negotiation
-    2. Provide companies an important benchmark for the talent competition, i.e., how much to offer to stay competitive in recruiting
-    3. Identify the important features that determine the total compensation, including the company, job role, office location, employees’ experience, and macro-factors such as employment rate and inflation rate.  
+Predict the total compensation for a prospective employee based on the professional background, companies and their locations, and macroeconomic  factors.
+* Goals
+  1. Provide a reasonable expectation for compensation negotiation
+  2. Provide an important benchmark to the companies for competitive compensation package in recruitment.
 
-The success of the project is measured by the accuracy of the total compensation prediction, i.e., the difference between the actual and the predicted compensation.
+The technical goal for our project is to maximize **R^2** and minimize **MSE**. 
 
-* ### Data cleanings and EDA
+* ### Data cleaning and EDA
 
 Our project is based on the datasets obtained from:
-1. web scrapping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with a  permission from the owners.
-2. a csv file from the website [Inflation Rate data for United States of America](https://www.rateinflation.com/inflation-rate/usa-inflation-rate/), and
-3. another csv file from the website [USA Inflation Rate](https://data.world/vizwiz/employment-unemployment-by-state-and-month/workspace/file?filename=BLS+Monthly+Unemployment+Rate.xlsx).
+1. web scraping the Levels.fyi (which lets users compare career levels and compensation packages across different companies) with a  permission from the owners.
+2. Inflation rate from [rateinflation.com](https://www.rateinflation.com/inflation-rate/usa-inflation-rate/), and
+3. unemployment data from [Data World](https://data.world/vizwiz/employment-unemployment-by-state-and-month/workspace/file?filename=BLS+Monthly+Unemployment+Rate.xlsx).
 
-The three datasets were merged after making necessary data cleanings and EDA and we named the final set **salary_cleaned.csv**.
+The three datasets were merged after making necessary data cleaning and EDA.
+
+## Data Dictionary
+
+|Term|Description|
+|--|--|
+|timestamp|timestamp of compensation record submission|
+|company|company names |
+|title|employee's job title|
+|totalyearlycompensation|total compensation that an employee gets annually|
+|location|cities where the companies are located|
+|yearsofexperience|years of experience in a career|
+|yearsatcompany|experience years of an employee at a particular company |
+|year|year of timestamp|
+|month|month of timestamp|
+|year_month|year month of the data|
+|inflation_rate|the percentage at which a currency is devalued during a period|
+|inflation_rate_3mos|inflation rate of 3 months prior to record timestamp|
+|state|states in the US|
+|employment_rate|The percentage of the labor force that is employed|
+|employment_rate_3mos|employment rate of 3 months prior to record timestamp|
 
 * Some of the EDAs we used include:
   1. Features' correlation  
@@ -53,30 +72,25 @@ The three datasets were merged after making necessary data cleanings and EDA and
 
 ![Total copensation](Images/us_unemployment_rate.png)
 
-* ### Data Preprocessing and Modeling
-We tried the models:
-> **Linear regression with (and without penalties)**
-  >
-  > **Random Forest**
-  >
-  > **Gradient Boosting (with/without gridsearch)**
-  >
-  > **Support Vector Regression(SVR)**, and
-  >
-  > **AdaBoost**
-
-* ### Model Selection
+* ### Model Performance
 
 Almost all the models we tried took longer time than we expected and so we had to decide trying out one model on **AWS** platform. The following table summarizes the models we tried for this project and we agreed to pick our best model to be Gradient Boosting Regressor (with gridsearch).
 
 |**Model**|**Training Score (R^2)**|**Testing Score(R^2)**|**MSE(Train)**|**MSE(Test)**|*Comment*|
 |--|--|--|--|--|--|
 |**Linear Regression(with no penality)**|0.5193|-7.2931Xe^28|8286.35|1.22Xe^27||
-|**Lasso Regularization**|0.5182|0.5143|8305.30|8157.45||
-|**Ridge Regularization**|0.52|0.5097|8274.20|8234.28||
-|**Elastic Net Regularization**|0.4483|0.4499|9511.19|9238.88||
-|**Random Forest**|0.466|0.410|9060|10319||
+|**Lasso Regularization (CV)**|0.5182|0.5143|8305.30|8157.45||
+|**Ridge Regularization (CV)**|0.52|0.5097|8274.20|8234.28||
+|**Elastic Net  Regularization (CV)**|0.4483|0.4499|9511.19|9238.88||
+|**Random Forest Regression (with Gridsearch)**|0.466|0.410|9060|10319||
+|**KNN Regressor (with Gridsearch)**|0.9907|0.4762|158.35|9172.55||
 |**Gradient Boosting Regressor (no gridsearch)**|0.5973|0.5318|6834.12|8198.40||
 |**Gradient Boosting Regressor (with gridsearch)**|0.7131|0.5477|4867.52|7919.98|Best Model|
-|**SVR**|0.1368|-0.1287|||
-|**AdaBoost**|0.1930|0.1276|13693|15276||
+|**Support Vector Regression (SVR)(without gridsearch)**|0.1368|-0.1287|||
+|**Support Vector Regression (SVR)(with Gridsearch)**|0.5029|0.4745|||
+|**AdaBoost (with Gridsearch)**|0.1930|0.1276|13693|15276||
+
+### Next Steps
+* More features about the employee, the company and industry, and macro-economy
+* Include more current data
+* More hyperparameter search (grid search, randomized search, bayes search)
